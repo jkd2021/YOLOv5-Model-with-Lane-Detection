@@ -32,7 +32,7 @@ class LaneDetection:
             # LaneDetection.show_masked(canny_remote, masked_edge_img)
 
             # do Hough Transform on the cannyed + masked grayscale frame, and
-            # seperate the lines into left ones and right ones
+            # separate the lines into left ones and right ones
             lines = cv2.HoughLinesP(masked_edge_img, 1, np.pi / 100, 15, minLineLength=00, maxLineGap=20)
 
             if lines is not None:
@@ -152,4 +152,4 @@ class CustomError(Exception):
         super().__init__(self)
         self.errorinfo=ErrorInfo
     def __str__(self):
-        return self.errorinfo
+        return self.errorinfo
